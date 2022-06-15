@@ -12,6 +12,7 @@ func main() {
 	router.LoadHTMLGlob("../template/*")
 
 	router.GET("/", showIndexPage)
+	router.GET("/article/view/:article_id", getArticle)
 
 	router.Run()
 }
