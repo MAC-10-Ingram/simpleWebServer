@@ -3,7 +3,12 @@
 <!-- hedaer.html -->
 {{ template "header.html" .}}
 
-<h1>Hello, Gin?</h1>
+    {{range .payload}}
+        <a href="/article/view/{{.ID}}">
+            <h2>{{.Title}}</h2>
+        </a>
+        <p>{{.Content}}</p>
+    {{end}}
 
 <!-- footer.html -->
 {{ template "footer.html" .}}
